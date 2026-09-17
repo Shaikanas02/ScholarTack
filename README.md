@@ -5,10 +5,7 @@
 **Core Thesis:**
 > ### *"Gemini extracts. Evidence proves. Rules decide. ScholarTrack secures the scholarship."*
 
->**Live Demo** - " https://haqdaar-promptwars-techverse-neqx.onrender.com "
-
-<img width="1742" height="881" alt="image" src="https://github.com/user-attachments/assets/fc1d06c7-df64-424d-942e-4d4c709a0ce5" />
-
+> **Live Demo** - " https://haqdaar-promptwars-techverse-neqx.onrender.com "
 
 [![Backend Tests](https://img.shields.io/badge/Backend%20Tests-36%2F36%20Passing-emerald?style=flat-square&logo=pytest)](#-automated-testing)
 [![Architecture](https://img.shields.io/badge/Architecture-Dual--Layer%20Airgap-blue?style=flat-square)](#-architecture--dual-layer-airgap)
