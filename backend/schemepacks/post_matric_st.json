@@ -1,0 +1,117 @@
+{
+  "scheme_id": "post_matric_st",
+  "scheme_name": "Centrally Sponsored Post-Matric Scholarship for ST Students",
+  "authority": "Ministry of Tribal Affairs, Government of India",
+  "jurisdiction": "Centrally Sponsored State Implemented (Disbursed via National Scholarship Portal & State Portals)",
+  "benefit": "Full compulsory non-refundable fees reimbursement + annual maintenance allowance up to ₹13,500/year",
+  "version": "2024.1",
+  "source_url": "https://tribal.nic.in/ScholarshiP.aspx",
+  "last_verified": "2026-08-20",
+  "review_window_days": 180,
+  "required_documents": [
+    "caste_certificate_st",
+    "income_certificate",
+    "marksheet_previous_class",
+    "fee_receipt",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "ST_01",
+      "label": "Candidate belongs to Scheduled Tribe (ST) community",
+      "plain_description": "Candidate must belong to a notified Scheduled Tribe recognized in the respective State/UT.",
+      "required_fact": "social_category",
+      "predicate": {
+        "operator": "in",
+        "value": [
+          "ST",
+          "st",
+          "Scheduled Tribe",
+          "scheduled_tribe"
+        ]
+      },
+      "accepted_proof": [
+        "caste_certificate",
+        "caste_certificate_st",
+        "tribe_certificate"
+      ],
+      "source_clause": "Ministry of Tribal Affairs Guidelines Clause 3.1 - Beneficiary",
+      "source_url": "https://tribal.nic.in/",
+      "remediation": "Upload valid Scheduled Tribe (ST) Certificate issued by competent Revenue Authority."
+    },
+    {
+      "rule_id": "ST_02",
+      "label": "Pursuing recognized Post-Matriculation or Post-Secondary course",
+      "plain_description": "Student must be enrolled in Class 11, 12, ITI, Diploma, Degree, or PG program in a recognized institution.",
+      "required_fact": "is_post_matric_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "bonafide_certificate",
+        "admission_receipt"
+      ],
+      "source_clause": "Guidelines Clause 4 - Eligible Courses",
+      "source_url": "https://tribal.nic.in/",
+      "remediation": "Upload current course bonafide or admission receipt."
+    },
+    {
+      "rule_id": "ST_03",
+      "label": "Annual family income ceiling (<= ₹2,50,000 per annum)",
+      "plain_description": "Total family annual income must not exceed ₹2.5 Lakh per annum.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 250000.0
+      },
+      "accepted_proof": [
+        "income_certificate"
+      ],
+      "source_clause": "Guidelines Clause 5 - Means Test",
+      "source_url": "https://tribal.nic.in/",
+      "remediation": "Upload valid Income Certificate showing income within ₹2.5 Lakh."
+    },
+    {
+      "rule_id": "ST_04",
+      "label": "Aadhaar verified and bank account ready",
+      "plain_description": "Student must possess Aadhaar seeded with an active bank account.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "Guidelines Clause 6 - DBT Modality",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card linked with bank account."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP) / State Tribal Portals",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "District Tribal Welfare Officer / College Nodal Officer",
+    "documents_to_carry": [
+      "Scheduled Tribe (ST) Certificate issued by Sub-Divisional Officer (SDO) or Tehsildar",
+      "Income Certificate (<= ₹2.5 Lakh)",
+      "Fee receipt and college Bonafide Certificate",
+      "Previous year exam marksheet",
+      "Aadhaar Card and Bank Passbook"
+    ],
+    "process_steps": [
+      "Complete One-Time Registration (OTR) on the National Scholarship Portal",
+      "Choose Ministry of Tribal Affairs: Centrally Sponsored Post-Matric Scholarship for ST",
+      "Submit college enrollment and caste certificate details",
+      "College HOI and District Welfare Officer digital sign-off",
+      "Full fee reimbursement and maintenance transferred to bank account via DBT"
+    ]
+  },
+  "category": "Social Category (ST)",
+  "education_level": "Post-Matric (Class 11 to PG)",
+  "deadline": "2026-10-31",
+  "award_amount": "100% Fees + ₹13,500 / year",
+  "is_featured": false,
+  "application_status": "Open"
+}

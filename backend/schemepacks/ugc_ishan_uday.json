@@ -1,0 +1,125 @@
+{
+  "scheme_id": "ugc_ishan_uday",
+  "scheme_name": "UGC Ishan Uday Special Scholarship for North Eastern Region (NER)",
+  "authority": "University Grants Commission (UGC), Ministry of Education, Govt of India",
+  "jurisdiction": "Central Scheme for North Eastern States (Disbursed via National Scholarship Portal)",
+  "benefit": "₹7,800/month for technical/medical/professional courses (₹78,000/yr) and ₹5,400/month for general courses",
+  "version": "2024.1",
+  "source_url": "https://www.ugc.gov.in/ner/",
+  "last_verified": "2026-08-25",
+  "review_window_days": 180,
+  "required_documents": [
+    "domicile_certificate_ner",
+    "marksheet_class_12",
+    "income_certificate",
+    "bonafide_certificate",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "ISHAN_01",
+      "label": "Permanent Domicile of North Eastern Region (NER)",
+      "plain_description": "Candidate must possess a valid Permanent Resident / Domicile Certificate of one of the 8 North Eastern states (Assam, Arunachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura).",
+      "required_fact": "is_ner_domicile",
+      "predicate": {
+        "operator": "in",
+        "value": [
+          true,
+          "true",
+          "yes",
+          "Yes",
+          "NER",
+          "Assam",
+          "Arunachal Pradesh",
+          "Manipur",
+          "Meghalaya",
+          "Mizoram",
+          "Nagaland",
+          "Sikkim",
+          "Tripura"
+        ]
+      },
+      "accepted_proof": [
+        "domicile_certificate_ner",
+        "prc_certificate"
+      ],
+      "source_clause": "UGC Ishan Uday Guidelines Clause 2.1 - Target Group",
+      "source_url": "https://www.ugc.gov.in/ner/",
+      "remediation": "Upload valid Domicile Certificate from competent state authority of NER."
+    },
+    {
+      "rule_id": "ISHAN_02",
+      "label": "Enrolled in 1st year of recognized General or Professional UG degree program",
+      "plain_description": "Candidate must have passed Class 12 and enrolled in 1st year of general degree, technical, medical, or professional course.",
+      "required_fact": "is_ug_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "bonafide_certificate",
+        "admission_receipt"
+      ],
+      "source_clause": "UGC Ishan Uday Guidelines Clause 2.2 - Qualifying Program",
+      "source_url": "https://www.ugc.gov.in/ner/",
+      "remediation": "Upload bonafide admission letter from recognized college or university."
+    },
+    {
+      "rule_id": "ISHAN_03",
+      "label": "Annual family income ceiling (<= ₹4,50,000 per annum)",
+      "plain_description": "Gross annual income of parents/family from all sources must not exceed ₹4.5 Lakh per annum.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 450000.0
+      },
+      "accepted_proof": [
+        "income_certificate"
+      ],
+      "source_clause": "UGC Ishan Uday Guidelines Clause 2.3 - Income Limit",
+      "source_url": "https://www.ugc.gov.in/ner/",
+      "remediation": "Upload valid Income Certificate issued by Tahsildar/Revenue Circle Officer."
+    },
+    {
+      "rule_id": "ISHAN_04",
+      "label": "Aadhaar verified and bank account linked",
+      "plain_description": "Candidate must have Aadhaar seeded with their active bank account for DBT payment.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "UGC Payment Guidelines Clause 5 - DBT Modality",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card linked with bank account."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP) - UGC Schemes",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "UGC North Eastern Regional Office (NERO) / College Nodal Officer",
+    "documents_to_carry": [
+      "Domicile / Permanent Resident Certificate issued by District Magistrate/SDO",
+      "Class 12 Passing Marksheet and Certificate",
+      "Income Certificate issued by designated Revenue Authority (<= ₹4.5 Lakh)",
+      "College Bonafide and 1st year Admission Fee receipt",
+      "Aadhaar Card and Bank Passbook copy"
+    ],
+    "process_steps": [
+      "Log in to National Scholarship Portal (NSP) using your OTR credentials",
+      "Apply under UGC Schemes: ISHAN UDAY SPECIAL SCHOLARSHIP SCHEME FOR NER",
+      "Enter Class 12 marks, college course details, and upload NER Domicile certificate",
+      "College verification through NSP college login",
+      "Monthly DBT stipend of up to ₹7,800/mo transferred via PFMS"
+    ]
+  },
+  "category": "North Eastern Region",
+  "education_level": "Under-Graduate (General & Professional)",
+  "deadline": "2026-10-15",
+  "award_amount": "₹78,000 / year",
+  "is_featured": true,
+  "application_status": "Open"
+}

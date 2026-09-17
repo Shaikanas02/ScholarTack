@@ -1,0 +1,121 @@
+{
+  "scheme_id": "aicte_saksham",
+  "scheme_name": "AICTE Saksham Scholarship Scheme for Specially-Abled Students (Degree)",
+  "authority": "All India Council for Technical Education (AICTE), Ministry of Education, Govt of India",
+  "jurisdiction": "Central Government / AICTE Scheme (Disbursed via National Scholarship Portal)",
+  "benefit": "₹50,000 per annum towards tuition fee, equipment, books, stationery and assistive software",
+  "version": "2024.1",
+  "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+  "last_verified": "2026-08-20",
+  "review_window_days": 180,
+  "required_documents": [
+    "disability_certificate",
+    "marksheet_or_admission_receipt",
+    "income_certificate",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "SAKSHAM_01",
+      "label": "Candidate benchmark disability qualification (Disability >= 40%)",
+      "plain_description": "Candidate must have a valid disability certificate issued by a competent government medical authority indicating at least 40% disability.",
+      "required_fact": "disability_status",
+      "predicate": {
+        "operator": "in",
+        "value": [
+          true,
+          "true",
+          "yes",
+          "Yes",
+          "differently_abled",
+          "divyangjan",
+          "locomotor",
+          "visual",
+          "hearing"
+        ]
+      },
+      "accepted_proof": [
+        "disability_certificate",
+        "udid_card"
+      ],
+      "source_clause": "AICTE Saksham Guidelines Clause 2.1 - Benchmark Disability",
+      "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "remediation": "Upload valid government Disability Certificate or Unique Disability ID (UDID) card."
+    },
+    {
+      "rule_id": "SAKSHAM_02",
+      "label": "Enrolled in 1st year of AICTE approved UG Technical Degree program",
+      "plain_description": "Student must be admitted to 1st year degree course in an AICTE-approved technical institution.",
+      "required_fact": "is_ug_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "bonafide_certificate",
+        "admission_receipt",
+        "marksheet_or_admission_receipt"
+      ],
+      "source_clause": "AICTE Saksham Guidelines Clause 2.2 - Institutional Admission",
+      "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "remediation": "Upload admission allotment letter or college bonafide certificate."
+    },
+    {
+      "rule_id": "SAKSHAM_03",
+      "label": "Annual family income threshold (<= ₹8,00,000 per annum)",
+      "plain_description": "Total family annual income must not exceed ₹8 Lakh per year.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 800000.0
+      },
+      "accepted_proof": [
+        "income_certificate"
+      ],
+      "source_clause": "AICTE Saksham Guidelines Clause 2.3 - Income Ceiling",
+      "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+      "remediation": "Upload valid Income Certificate showing household income at or below ₹8 Lakh."
+    },
+    {
+      "rule_id": "SAKSHAM_04",
+      "label": "Aadhaar verified and bank account ready",
+      "plain_description": "Student must possess an Aadhaar card linked with an active bank account for DBT transfer.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "Guidelines Clause 4 - Direct Benefit Transfer",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card linked with bank account."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP) - AICTE Section",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "AICTE Student Development Cell / College Equal Opportunity Cell",
+    "documents_to_carry": [
+      "Disability Certificate / UDID Card showing 40% or more disability",
+      "Admission letter issued by Centralized Counseling / College for B.Tech/B.E.",
+      "Valid Income Certificate issued by Tahsildar/SDM (income <= ₹8 Lakh)",
+      "Aadhaar Card and NPCI-seeded Bank Passbook",
+      "Class 10th and 12th Marksheets"
+    ],
+    "process_steps": [
+      "Complete One-Time Registration (OTR) on the National Scholarship Portal",
+      "Choose scheme: AICTE - SAKSHAM SCHOLARSHIP SCHEME FOR SPECIALLY-ABLED (DEGREE)",
+      "Provide UDID or Disability Certificate number along with income details",
+      "Submit application for online verification by College Nodal Officer",
+      "Direct DBT grant of ₹50,000/year disbursed to verified Aadhaar-linked account"
+    ]
+  },
+  "category": "Differently-Abled",
+  "education_level": "Under-Graduate (Technical)",
+  "deadline": "2026-10-20",
+  "award_amount": "₹50,000 / year",
+  "is_featured": true,
+  "application_status": "Open"
+}

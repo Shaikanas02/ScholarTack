@@ -1,0 +1,115 @@
+{
+  "scheme_id": "aicte_pragati_ug",
+  "scheme_name": "AICTE Pragati Scholarship for Girls (UG Technical Degrees - BTech/BE/BPharm)",
+  "authority": "All India Council for Technical Education (AICTE), Ministry of Education, Govt of India",
+  "jurisdiction": "Central Government / AICTE Scheme (Disbursed via National Scholarship Portal)",
+  "benefit": "₹50,000 per annum lump-sum scholarship for every year of UG technical degree study (up to 4 years)",
+  "version": "2024.1",
+  "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+  "last_verified": "2026-08-15",
+  "review_window_days": 180,
+  "required_documents": [
+    "marksheet_or_admission_receipt",
+    "income_certificate",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "PRAGATI_01",
+      "label": "Female candidate qualification (Girls empowerment initiative)",
+      "plain_description": "Scheme is exclusively for girl students admitted to technical degree courses.",
+      "required_fact": "gender",
+      "predicate": {
+        "operator": "in",
+        "value": [
+          "female",
+          "Female",
+          "girl",
+          "woman"
+        ]
+      },
+      "accepted_proof": [
+        "aadhaar_card",
+        "marksheet_or_admission_receipt"
+      ],
+      "source_clause": "AICTE Pragati Scheme Guidelines Clause 2.1 - Target Group",
+      "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "remediation": "Verify that applicant is a female student."
+    },
+    {
+      "rule_id": "PRAGATI_02",
+      "label": "Admitted to 1st year of AICTE approved UG Technical Degree program",
+      "plain_description": "Student must be enrolled in an AICTE-approved degree level technical course (B.E., B.Tech, B.Pharm, Arch).",
+      "required_fact": "is_ug_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "bonafide_certificate",
+        "admission_receipt",
+        "marksheet_or_admission_receipt"
+      ],
+      "source_clause": "AICTE Pragati Guidelines Clause 2.2 - Course Eligibility",
+      "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "remediation": "Upload AICTE institute admission receipt or bonafide certificate."
+    },
+    {
+      "rule_id": "PRAGATI_03",
+      "label": "Annual family income threshold ceiling (<= ₹8,00,000 per annum)",
+      "plain_description": "Total family income from all sources must not exceed ₹8 Lakh per year.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 800000.0
+      },
+      "accepted_proof": [
+        "income_certificate"
+      ],
+      "source_clause": "AICTE Pragati Guidelines Clause 2.3 - Income Criterion",
+      "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+      "remediation": "Upload valid Income Certificate showing household annual income under ₹8 Lakh."
+    },
+    {
+      "rule_id": "PRAGATI_04",
+      "label": "Aadhaar identity and DBT bank linkage",
+      "plain_description": "Student must have an active savings account seeded with Aadhaar.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "Guidelines Clause 4 - DBT Payment Modality",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card linked with student's bank account."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP) - AICTE Section",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "AICTE Approval Cell / College Student Welfare Nodal Officer",
+    "documents_to_carry": [
+      "Class 10 and 12 Mark sheets",
+      "Admission letter issued by Centralized Counseling / College for B.Tech/B.E./B.Pharm",
+      "Valid Income Certificate issued by Tahsildar/SDM (income <= ₹8 Lakh)",
+      "Student Aadhaar Card and Seeded Bank Passbook",
+      "Family declaration regarding girl children"
+    ],
+    "process_steps": [
+      "Register on National Scholarship Portal (NSP) via One-Time Registration (OTR)",
+      "Select Scheme: AICTE - PRAGATI SCHOLARSHIP SCHEME FOR GIRL STUDENTS (DEGREE)",
+      "Enter tuition fees and upload AICTE college admission letter and income proof",
+      "College Head of Institution (HOI) validates admission through NSP portal",
+      "AICTE sanctions ₹50,000/yr disbursed directly into student's Aadhaar-seeded bank account"
+    ]
+  },
+  "category": "Girls in STEM",
+  "education_level": "Under-Graduate (Technical)",
+  "deadline": "2026-09-30",
+  "award_amount": "₹50,000 / year",
+  "is_featured": true,
+  "application_status": "Closing Soon"
+}

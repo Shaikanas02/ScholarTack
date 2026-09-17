@@ -1,0 +1,85 @@
+{
+  "scheme_id": "ugc_pg_studies",
+  "scheme_name": "National Scholarship for Post Graduate Studies (UGC)",
+  "authority": "University Grants Commission (UGC), Ministry of Education, Govt of India",
+  "jurisdiction": "Central Sector Scheme (National Scholarship Portal)",
+  "benefit": "₹15,000 per month for 10 months each year for 2 years (total ₹3,00,000 tenure)",
+  "version": "2024.1",
+  "source_url": "https://scholarships.gov.in/",
+  "last_verified": "2026-08-10",
+  "review_window_days": 180,
+  "required_documents": [
+    "pg_admission_proof",
+    "ug_degree_transcript",
+    "bonafide_certificate",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "UGCPG_01",
+      "label": "Enrolled in 1st year of regular Post-Graduate program",
+      "plain_description": "Candidate must be admitted into 1st year of regular Master degree program in a recognized university or institute.",
+      "required_fact": "is_post_matric_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["pg_admission_proof", "bonafide_certificate"],
+      "source_clause": "UGC PG Guidelines Clause 3.1 - Eligibility",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload university PG admission letter."
+    },
+    {
+      "rule_id": "UGCPG_02",
+      "label": "Age limit (<= 30 years at admission)",
+      "plain_description": "Candidate age must not exceed 30 years as of the academic year admission cutoff.",
+      "required_fact": "applicant_age",
+      "predicate": {
+        "operator": "lte",
+        "value": 30
+      },
+      "accepted_proof": ["aadhaar_card", "birth_certificate"],
+      "source_clause": "UGC PG Guidelines Clause 3.2 - Age Ceiling",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Candidate must be 30 years of age or younger."
+    },
+    {
+      "rule_id": "UGCPG_03",
+      "label": "Aadhaar verified and bank account ready",
+      "plain_description": "Aadhaar must be linked to active bank account for DBT fellowship payment.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["aadhaar_card"],
+      "source_clause": "Guidelines Clause 4 - DBT Payment Modality",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP)",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "University Grants Commission (UGC) / University Nodal Officer",
+    "documents_to_carry": [
+      "PG Admission Confirmation Letter",
+      "Undergraduate Degree Transcript / Certificate",
+      "College Bonafide Certificate",
+      "Aadhaar Card and Bank Account Proof"
+    ],
+    "process_steps": [
+      "Register on National Scholarship Portal via OTR",
+      "Apply under UGC Section: National Scholarship for Post Graduate Studies",
+      "Submit academic marks from undergraduate degree",
+      "Verification by University/College Nodal Officer",
+      "Monthly DBT fellowship credit into bank account"
+    ]
+  },
+  "category": "Post-Graduate Merit",
+  "education_level": "Post-Graduate (PG Level)",
+  "deadline": "2026-10-31",
+  "award_amount": "₹1,50,000 / year",
+  "is_featured": false,
+  "application_status": "Open"
+}

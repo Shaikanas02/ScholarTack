@@ -1,0 +1,110 @@
+{
+  "scheme_id": "begum_hazrat_mahal",
+  "scheme_name": "Begum Hazrat Mahal National Scholarship for Meritorious Girls",
+  "authority": "Maulana Azad Education Foundation, Ministry of Minority Affairs, Government of India",
+  "jurisdiction": "Central Sector Scheme (Pan-India)",
+  "benefit": "₹12,000 per annum for higher secondary / college study via direct DBT transfer",
+  "version": "2024.1",
+  "source_url": "https://scholarships.gov.in/",
+  "last_verified": "2026-08-10",
+  "review_window_days": 180,
+  "required_documents": [
+    "marksheet_or_admission_receipt",
+    "income_certificate",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "BHM_01",
+      "label": "Female student identifier",
+      "plain_description": "Scholarship is reserved exclusively for female students.",
+      "required_fact": "gender",
+      "predicate": {
+        "operator": "eq",
+        "value": "female"
+      },
+      "accepted_proof": [
+        "aadhaar_card",
+        "marksheet_or_admission_receipt",
+        "self_declaration"
+      ],
+      "source_clause": "Begum Hazrat Mahal Scheme Guidelines Clause 2(a)",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Confirm student gender is female in profile or upload identity document."
+    },
+    {
+      "rule_id": "BHM_02",
+      "label": "Academic marks in qualifying examination (>= 55%)",
+      "plain_description": "Student must have obtained at least 55% marks in aggregate in previous examination.",
+      "required_fact": "academic_percentage",
+      "predicate": {
+        "operator": "gte",
+        "value": 55.0
+      },
+      "accepted_proof": [
+        "marksheet_or_admission_receipt",
+        "class_12_marksheet"
+      ],
+      "source_clause": "BHM Guidelines Clause 2(b) - Qualifying Marks",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload previous class marksheet verifying aggregate marks >= 55%."
+    },
+    {
+      "rule_id": "BHM_03",
+      "label": "Annual family income ceiling (<= ₹2,00,000 per annum)",
+      "plain_description": "Annual income of the student parents/guardian from all sources must not exceed ₹2.0 Lakh.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 200000.0
+      },
+      "accepted_proof": [
+        "income_certificate"
+      ],
+      "source_clause": "BHM Guidelines Clause 2(c) - Income Limit",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload valid digital Income Certificate issued by competent revenue authority (income <= ₹2 Lakh)."
+    },
+    {
+      "rule_id": "BHM_04",
+      "label": "Aadhaar verified bank account for DBT",
+      "plain_description": "Student must have Aadhaar number linked with active personal bank account.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "BHM Guidelines Clause 4 - DBT Mandate",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card seeded with student bank account."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP)",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "Ministry of Minority Affairs / School Nodal Officer",
+    "documents_to_carry": [
+      "Self-attested copy of previous marksheet",
+      "Original Income Certificate from competent authority",
+      "Self-declaration of Minority Community",
+      "School/College Verification Certificate by Principal",
+      "Student Aadhaar Card and Bank Passbook"
+    ],
+    "process_steps": [
+      "Complete One-Time Registration (OTR) on NSP Portal",
+      "Select Begum Hazrat Mahal National Scholarship Scheme",
+      "Upload Marksheet, Income Certificate, and Self-declaration",
+      "Institution Principal/Nodal Officer verifies online within 20 days",
+      "Ministry of Minority Affairs sanctions grant of ₹12,000/yr directly via DBT"
+    ]
+  },
+  "category": "Girls & Minority",
+  "education_level": "Post-Matric (Class 11, 12, UG)",
+  "deadline": "2026-10-25",
+  "award_amount": "₹12,000 / year",
+  "is_featured": true,
+  "application_status": "Open"
+}

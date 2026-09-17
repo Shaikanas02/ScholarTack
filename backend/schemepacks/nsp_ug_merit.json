@@ -1,0 +1,127 @@
+{
+  "scheme_id": "nsp_ug_merit",
+  "scheme_name": "PM-USP Central Sector Scheme of Scholarship for College & University Students (NSP UG)",
+  "authority": "Department of Higher Education, Ministry of Education, Government of India",
+  "jurisdiction": "Central Sector Scheme (100% Central Funding)",
+  "benefit": "₹12,000 per annum for 1st, 2nd, and 3rd year of regular Under-Graduate (UG) degree study (BA/BSc/BCom/BTech/MBBS/BCA) via direct DBT",
+  "version": "2024.1",
+  "source_url": "https://scholarships.gov.in/",
+  "last_verified": "2026-08-15",
+  "review_window_days": 180,
+  "required_documents": [
+    "marksheet_or_admission_receipt",
+    "income_certificate",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "NSP_UG_01",
+      "label": "Full-time regular Under-Graduate (UG) degree enrollment",
+      "plain_description": "Candidate must be pursuing a full-time regular undergraduate course (BA, BSc, BCom, BTech, MBBS, etc.) from an AICTE/UGC recognized college or university.",
+      "required_fact": "is_ug_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "marksheet_or_admission_receipt",
+        "bonafide_certificate",
+        "student_id"
+      ],
+      "source_clause": "PM-USP Guidelines for Central Sector Scheme of Scholarship Clause 3(i)",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload college admission receipt or bonafide certificate proving enrollment in a regular UG degree."
+    },
+    {
+      "rule_id": "NSP_UG_02",
+      "label": "Academic qualifying score in Class 12 / Higher Secondary (>= 75% or 80th percentile)",
+      "plain_description": "Candidate must score above 80th percentile in relevant stream in Class 12 board examination (minimum 75% aggregate score).",
+      "required_fact": "academic_percentage",
+      "predicate": {
+        "operator": "gte",
+        "value": 75.0
+      },
+      "accepted_proof": [
+        "marksheet_or_admission_receipt",
+        "class_12_marksheet"
+      ],
+      "source_clause": "PM-USP Guidelines Clause 3(ii) - Academic Percentile Cut-off",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Provide Class 12 board marksheet verifying aggregate marks >= 75%."
+    },
+    {
+      "rule_id": "NSP_UG_03",
+      "label": "Gross annual parental / family income ceiling (<= ₹4,50,000 per annum)",
+      "plain_description": "Total annual family income from all sources must not exceed ₹4,50,000.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 450000.0
+      },
+      "accepted_proof": [
+        "income_certificate"
+      ],
+      "source_clause": "PM-USP Guidelines Clause 4 - Income Ceiling",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload a valid digital Income Certificate issued by competent revenue authority proving income <= ₹4.5 Lakh."
+    },
+    {
+      "rule_id": "NSP_UG_04",
+      "label": "Aadhaar seeded bank account for direct DBT transfer",
+      "plain_description": "Candidate must possess a valid Aadhaar card linked with active bank account.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "PM-USP Guidelines Clause 6 - DBT Disbursal Mandate",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card seeded with bank account for DBT."
+    },
+    {
+      "rule_id": "NSP_UG_05",
+      "label": "Non-duplication clause (not receiving another central/state scholarship)",
+      "plain_description": "Student must not be currently in receipt of another concurrent central or state government scholarship.",
+      "required_fact": "is_availing_other_scholarship",
+      "predicate": {
+        "operator": "neq",
+        "value": true
+      },
+      "accepted_proof": [
+        "self_declaration",
+        "bonafide_certificate"
+      ],
+      "source_clause": "PM-USP Guidelines Clause 5 - Non-Duplication Rule",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Confirm that student is not claiming another concurrent government scholarship."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP)",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "College Nodal Officer (INO) / State Education Department",
+    "documents_to_carry": [
+      "Class 12 / Higher Secondary Board Marksheet",
+      "College Admission Receipt / Bonafide Certificate",
+      "Valid Income Certificate (issued by Tehsildar/SDM)",
+      "Student Aadhaar Card and Seeded Bank Passbook",
+      "Passport size photograph"
+    ],
+    "process_steps": [
+      "Complete One-Time Registration (OTR) on National Scholarship Portal (scholarships.gov.in)",
+      "Log in and apply under Department of Higher Education -> Central Sector Scheme of Scholarship for College and University Students",
+      "Upload Class 12 marksheet, income certificate, and fee receipt",
+      "College Institute Nodal Officer (INO) verifies enrollment and marks online",
+      "Ministry of Education sanctions scholarship of ₹12,000/yr directly via PFMS DBT"
+    ]
+  },
+  "category": "Merit-Based",
+  "education_level": "Under-Graduate",
+  "deadline": "2026-10-15",
+  "award_amount": "₹12,000 / year",
+  "is_featured": true,
+  "application_status": "Open"
+}

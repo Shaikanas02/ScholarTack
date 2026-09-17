@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: #f4f8f5;
+    color: #0f172a;
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom institutional light scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f6f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #c6d8ce;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ab4a5;
+}
+
+/* Institutional Card & Panel Utilities */
+.card-panel {
+  background: #ffffff;
+  border: 1px solid #e2ebe5;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.card-interactive {
+  background: #ffffff;
+  border: 1px solid #e2ebe5;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-interactive:hover {
+  border-color: #a7f3d0;
+  box-shadow: 0 10px 15px -3px rgba(4, 120, 87, 0.06), 0 4px 6px -2px rgba(4, 120, 87, 0.03);
+  transform: translateY(-1px);
+}
+
+/* Backwards-compatibility for existing panel references */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid #e2ebe5;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.glass-panel-interactive {
+  background: #ffffff;
+  border: 1px solid #e2ebe5;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-interactive:hover {
+  border-color: #a7f3d0;
+  box-shadow: 0 10px 15px -3px rgba(4, 120, 87, 0.06);
+  transform: translateY(-1px);
+}
+
+/* Accessible Institutional Badges */
+.badge-document-proven {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.badge-self-declared {
+  background-color: #fffbeb;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.badge-derived {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.badge-unknown {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+/* Pulsing voice glow */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.recording-pulse {
+  animation: pulse-ring 1.5s infinite;
+}

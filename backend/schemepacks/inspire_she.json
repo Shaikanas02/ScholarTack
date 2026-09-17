@@ -1,0 +1,110 @@
+{
+  "scheme_id": "inspire_she",
+  "scheme_name": "INSPIRE Scholarship for Higher Education (DST INSPIRE-SHE)",
+  "authority": "Department of Science & Technology, Ministry of Science and Technology, Government of India",
+  "jurisdiction": "Central Government Scheme (Pan-India)",
+  "benefit": "₹80,000 per annum (₹60,000 cash scholarship + ₹20,000 mentorship grant) for 5 years of BSc/BS/Int. MSc in Natural and Basic Sciences",
+  "version": "2024.2",
+  "source_url": "https://online-inspire.gov.in/",
+  "last_verified": "2026-08-01",
+  "review_window_days": 180,
+  "required_documents": [
+    "marksheet_or_admission_receipt",
+    "aadhaar_card",
+    "bank_passbook"
+  ],
+  "criteria": [
+    {
+      "rule_id": "INSPIRE_01",
+      "label": "Enrollment in regular Basic/Natural Sciences course (BSc, BS, Integrated MSc)",
+      "plain_description": "Candidate must be enrolled in Natural/Basic Science courses (Physics, Chemistry, Maths, Biology, Geology, Statistics) at recognized university/college.",
+      "required_fact": "is_ug_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "marksheet_or_admission_receipt",
+        "bonafide_certificate",
+        "student_id"
+      ],
+      "source_clause": "INSPIRE Guidelines 2024 Clause 2.1 - Eligible Courses in Basic Sciences",
+      "source_url": "https://online-inspire.gov.in/",
+      "remediation": "Upload college endorsement certificate confirming enrollment in regular natural/basic sciences."
+    },
+    {
+      "rule_id": "INSPIRE_02",
+      "label": "Class 12 academic performance within top 1% cut-off (marks >= 80%)",
+      "plain_description": "Must have aggregate marks in top 1% of respective Class 12 board examination (or aggregate >= 80%).",
+      "required_fact": "academic_percentage",
+      "predicate": {
+        "operator": "gte",
+        "value": 80.0
+      },
+      "accepted_proof": [
+        "marksheet_or_admission_receipt",
+        "class_12_marksheet"
+      ],
+      "source_clause": "INSPIRE Guidelines Clause 2.2 - Academic Eligibility Cut-off",
+      "source_url": "https://online-inspire.gov.in/",
+      "remediation": "Upload Class 12 marksheet proving aggregate marks >= 80%."
+    },
+    {
+      "rule_id": "INSPIRE_03",
+      "label": "Aadhaar seeded bank account for direct DBT disbursal",
+      "plain_description": "Student must have an active Aadhaar seeded savings bank account in SBI or nationalized bank.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "INSPIRE Guidelines Clause 4 - DBT Account Linking",
+      "source_url": "https://online-inspire.gov.in/",
+      "remediation": "Upload Aadhaar card linked with active student bank account."
+    },
+    {
+      "rule_id": "INSPIRE_04",
+      "label": "Non-duplication of concurrent scholarships",
+      "plain_description": "Student must not be receiving another government scholarship concurrently.",
+      "required_fact": "is_availing_other_scholarship",
+      "predicate": {
+        "operator": "neq",
+        "value": true
+      },
+      "accepted_proof": [
+        "self_declaration",
+        "bonafide_certificate"
+      ],
+      "source_clause": "INSPIRE Non-Duplication Undertaking Clause 5",
+      "source_url": "https://online-inspire.gov.in/",
+      "remediation": "Confirm undertaking that student is not claiming concurrent government funding."
+    }
+  ],
+  "application": {
+    "portal_name": "DST INSPIRE Portal",
+    "portal_url": "https://online-inspire.gov.in/",
+    "office_name": "DST INSPIRE Cell, Technology Bhavan, New Delhi",
+    "documents_to_carry": [
+      "Class 12 Board Marksheet",
+      "College Endorsement Certificate signed by Head of Institution",
+      "Class 10 Certificate (for Date of Birth)",
+      "Aadhaar Card and Student Bank Passbook (SBI preferred)"
+    ],
+    "process_steps": [
+      "Register on DST INSPIRE portal (online-inspire.gov.in) with valid email and mobile",
+      "Fill online application under Scholarship for Higher Education (SHE)",
+      "Upload Class 12 board marksheet and college endorsement form",
+      "Submit application and download submitted acknowledgement",
+      "DST reviews top 1% cut-offs and disburses ₹80,000/yr directly via PFMS DBT"
+    ]
+  },
+  "category": "Science & Research",
+  "education_level": "Under-Graduate (BSc / BS / Int. MSc)",
+  "deadline": "2026-10-20",
+  "award_amount": "₹80,000 / year",
+  "is_featured": true,
+  "application_status": "Open"
+}

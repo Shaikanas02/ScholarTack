@@ -1,0 +1,91 @@
+{
+  "scheme_id": "pm_kisan",
+  "scheme_name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+  "authority": "Department of Agriculture and Farmers Welfare, Ministry of Agriculture, Govt of India",
+  "jurisdiction": "Central",
+  "benefit": "₹6,000 per annum credited in 3 equal installments of ₹2,000 directly to bank accounts",
+  "version": "2024.2",
+  "source_url": "https://pmkisan.gov.in/",
+  "last_verified": "2026-08-15",
+  "review_window_days": 180,
+  "required_documents": [
+    "land_ownership_record",
+    "aadhaar_card",
+    "bank_passbook"
+  ],
+  "criteria": [
+    {
+      "rule_id": "PMK_01",
+      "label": "Ownership of cultivable agricultural landholding",
+      "plain_description": "The farmer household must own cultivable agricultural land registered in official land revenue records.",
+      "required_fact": "land_holding_acres",
+      "predicate": {
+        "operator": "gt",
+        "value": 0
+      },
+      "accepted_proof": ["land_ownership_record", "khasra_khatauni", "patta"],
+      "source_clause": "PM-KISAN Operational Guidelines Clause 2.1 (Definition of Beneficiary)",
+      "source_url": "https://pmkisan.gov.in/Documents/OperationalGuidelines.pdf",
+      "remediation": "Upload a valid Land Record (RoR / Khasra / Khatauni) in the applicant's name."
+    },
+    {
+      "rule_id": "PMK_02",
+      "label": "Non-institutional landholder exclusion check",
+      "plain_description": "Institutional landholders, constitutional post holders, and high-pension government retirees are excluded.",
+      "required_fact": "is_institutional_landholder",
+      "predicate": {
+        "operator": "eq",
+        "value": false
+      },
+      "accepted_proof": ["self_declaration", "land_ownership_record"],
+      "source_clause": "PM-KISAN Operational Guidelines Clause 3 (Exclusion Categories)",
+      "source_url": "https://pmkisan.gov.in/Documents/OperationalGuidelines.pdf",
+      "remediation": "Confirm applicant is an individual/family small farmer and not an institutional entity."
+    },
+    {
+      "rule_id": "PMK_03",
+      "label": "Mandatory Aadhaar identity verification",
+      "plain_description": "Applicant must possess a valid Aadhaar card for biometric authentication and direct benefit transfer (DBT).",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["aadhaar_card"],
+      "source_clause": "PM-KISAN Guidelines Clause 4.1 (Mandatory Aadhaar Seeding)",
+      "source_url": "https://pmkisan.gov.in/",
+      "remediation": "Upload a copy of applicant's Aadhaar Card."
+    },
+    {
+      "rule_id": "PMK_04",
+      "label": "Income tax payer exclusion check",
+      "plain_description": "Household members should not have paid income tax in the last assessment year.",
+      "required_fact": "is_income_tax_payer",
+      "predicate": {
+        "operator": "eq",
+        "value": false
+      },
+      "accepted_proof": ["income_certificate", "self_declaration", "itr_exemption"],
+      "source_clause": "PM-KISAN Operational Guidelines Clause 3(b)",
+      "source_url": "https://pmkisan.gov.in/Documents/OperationalGuidelines.pdf",
+      "remediation": "Provide self-declaration or Income Certificate proving non-taxpayer status."
+    }
+  ],
+  "application": {
+    "portal_name": "PM-KISAN Farmer Corner Portal",
+    "portal_url": "https://pmkisan.gov.in/RegistrationFormNew.aspx",
+    "office_name": "Common Service Centre (CSC) or Block Agricultural Office (DAO)",
+    "documents_to_carry": [
+      "Original Aadhaar Card with active mobile number linked",
+      "Latest Land Revenue Record (Khasra/Khatauni/7-12)",
+      "Nationalized Bank Passbook showing active Aadhaar NPCI seeding",
+      "Passport size photographs (2)"
+    ],
+    "process_steps": [
+      "Verify that bank account has NPCI Aadhaar seeding enabled at your bank branch",
+      "Submit online registration at pmkisan.gov.in or visit the nearest CSC kiosk",
+      "State Nodal Officer / Patwari will verify physical land records within 15 days",
+      "Subsequent installments credited directly into seeded bank account"
+    ]
+  }
+}

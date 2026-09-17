@@ -1,0 +1,57 @@
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Python virtual environment and bytecode
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Pytest and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node & Frontend build
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/tools/
+*.tgz
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local wrappers & temporary batch scripts
+node.cmd
+npm.cmd
+frontend/node.cmd
+frontend/npm.cmd
+
+# IDE & OS
+.vscode/*
+!.vscode/launch.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Scratch and logs
+scratch/
+*.log
+*.pdf
+Haqdaar_*.pdf
+ScholarTack_*.pdf
+ScholarTrack_*.pdf
+
+# Uploaded documents and test artifacts
+uploads/
+temp/
+*.tmp
+

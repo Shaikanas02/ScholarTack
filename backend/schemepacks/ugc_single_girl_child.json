@@ -1,0 +1,121 @@
+{
+  "scheme_id": "ugc_single_girl_child",
+  "scheme_name": "PG Indira Gandhi Scholarship for Single Girl Child",
+  "authority": "University Grants Commission (UGC), Ministry of Education, Govt of India",
+  "jurisdiction": "Central UGC Scheme (Disbursed via National Scholarship Portal)",
+  "benefit": "₹36,200 per annum (₹3,100 per month) for the full 2-year duration of Master's degree",
+  "version": "2024.1",
+  "source_url": "https://www.ugc.gov.in/page/scholarships-and-fellowships.aspx",
+  "last_verified": "2026-08-25",
+  "review_window_days": 180,
+  "required_documents": [
+    "single_girl_child_affidavit",
+    "ug_degree_marksheet",
+    "pg_admission_receipt",
+    "bonafide_certificate",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "SGC_01",
+      "label": "Girl student and single child of family",
+      "plain_description": "Candidate must be an only girl child in the family (girl students who are twin daughters/fraternal daughters are also eligible).",
+      "required_fact": "is_single_girl_child",
+      "predicate": {
+        "operator": "in",
+        "value": [
+          true,
+          "true",
+          "yes",
+          "Yes"
+        ]
+      },
+      "accepted_proof": [
+        "single_girl_child_affidavit",
+        "sdm_affidavit"
+      ],
+      "source_clause": "UGC Single Girl Child Guidelines Clause 2.1 - Eligibility Criteria",
+      "source_url": "https://www.ugc.gov.in/",
+      "remediation": "Upload ₹50 Stamp Paper Affidavit attested by SDM/First Class Magistrate certifying single girl child status."
+    },
+    {
+      "rule_id": "SGC_02",
+      "label": "Female candidate identity",
+      "plain_description": "Applicant must be female.",
+      "required_fact": "gender",
+      "predicate": {
+        "operator": "in",
+        "value": [
+          "female",
+          "Female",
+          "girl",
+          "woman"
+        ]
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "UGC Guidelines Clause 2.1",
+      "source_url": "https://www.ugc.gov.in/",
+      "remediation": "Confirm female gender identity on profile."
+    },
+    {
+      "rule_id": "SGC_03",
+      "label": "Age at time of PG admission ceiling (<= 30 years)",
+      "plain_description": "Candidate must be under 30 years of age at the time of admission to 1st year PG course.",
+      "required_fact": "applicant_age",
+      "predicate": {
+        "operator": "lte",
+        "value": 30
+      },
+      "accepted_proof": [
+        "aadhaar_card",
+        "class_10_marksheet"
+      ],
+      "source_clause": "UGC Guidelines Clause 2.3 - Age Limit",
+      "source_url": "https://www.ugc.gov.in/",
+      "remediation": "Verify age on Class 10 marksheet or Aadhaar."
+    },
+    {
+      "rule_id": "SGC_04",
+      "label": "Aadhaar verified and bank account linked",
+      "plain_description": "Candidate must have Aadhaar seeded with active bank account.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "UGC DBT Payment Clause 4",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card linked with bank account."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP) - UGC Section",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "University/College Post-Graduate Studies Section",
+    "documents_to_carry": [
+      "Affidavit on ₹50 Stamp Paper by SDM/Executive Magistrate stating Single Girl Child status",
+      "Proof of admission to regular 1st year Master's degree course (MA/MSc/MCom/MTech)",
+      "Undergraduate Degree certificate and consolidated marksheets",
+      "Class 10 certificate for age proof",
+      "Aadhaar Card and Bank Account Passbook"
+    ],
+    "process_steps": [
+      "Register on NSP portal with OTR",
+      "Select Scheme: PG INDIRA GANDHI SCHOLARSHIP FOR SINGLE GIRL CHILD",
+      "Upload SDM-attested affidavit and PG fee receipt",
+      "Institute verification by College Nodal Officer",
+      "₹36,200 annual fellowship disbursed directly through PFMS/DBT"
+    ]
+  },
+  "category": "Girls Higher Education",
+  "education_level": "Post-Graduate (Masters)",
+  "deadline": "2026-10-31",
+  "award_amount": "₹36,200 / year",
+  "is_featured": false,
+  "application_status": "Open"
+}

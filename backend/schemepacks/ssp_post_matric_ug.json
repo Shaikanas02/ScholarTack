@@ -1,0 +1,121 @@
+{
+  "scheme_id": "ssp_post_matric_ug",
+  "scheme_name": "SSP Post-Matric Scholarship for UG Degree & Diploma Students (State Scholarship Portal)",
+  "authority": "Social Welfare, Backward Classes Welfare & Higher Education Depts (State Portals)",
+  "jurisdiction": "State Government / State Scholarship Portal (SSP)",
+  "benefit": "100% College Tuition Fee Waiver / Concession + Vidyasiri Monthly Maintenance Stipend (₹1,500/month or up to ₹15,000/yr)",
+  "version": "2024.1",
+  "source_url": "https://ssp.postmatric.karnataka.gov.in/",
+  "last_verified": "2026-08-15",
+  "review_window_days": 180,
+  "required_documents": [
+    "marksheet_or_admission_receipt",
+    "income_certificate",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "SSP_UG_01",
+      "label": "Enrollment in post-secondary Under-Graduate (UG) degree / diploma program",
+      "plain_description": "Student must be actively admitted to a recognized undergraduate degree (BA, BSc, BCom, BTech, MBBS, BCA, BBA) or polytechnic diploma course.",
+      "required_fact": "is_ug_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "marksheet_or_admission_receipt",
+        "bonafide_certificate",
+        "college_fee_receipt"
+      ],
+      "source_clause": "SSP Post-Matric Scheme Operational Manual Section 2.1 - Recognized Courses",
+      "source_url": "https://ssp.postmatric.karnataka.gov.in/",
+      "remediation": "Upload college admission receipt or student identity card with registration number."
+    },
+    {
+      "rule_id": "SSP_UG_02",
+      "label": "Annual household family income limit (<= ₹2,50,000 per annum)",
+      "plain_description": "Total annual income of student's parents/guardian must not exceed ₹2,50,000.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 250000.0
+      },
+      "accepted_proof": [
+        "income_certificate"
+      ],
+      "source_clause": "SSP Guidelines Section 3 - Income Verification via Revenue Database",
+      "source_url": "https://ssp.postmatric.karnataka.gov.in/",
+      "remediation": "Upload digital Income Certificate (RD certificate) showing family income <= ₹2.5 Lakh/yr."
+    },
+    {
+      "rule_id": "SSP_UG_03",
+      "label": "Social category or economic/rural welfare eligibility",
+      "plain_description": "Candidate must belong to SC, ST, OBC (Cat-1/2A/2B/3A/3B), EWS, or economically weaker rural household.",
+      "required_fact": "social_category",
+      "predicate": {
+        "operator": "in",
+        "value": [
+          "SC",
+          "ST",
+          "OBC",
+          "General-EWS",
+          "Cat-1",
+          "2A",
+          "2B",
+          "3A",
+          "3B",
+          "General"
+        ]
+      },
+      "accepted_proof": [
+        "caste_certificate",
+        "income_certificate"
+      ],
+      "source_clause": "SSP Guidelines Section 4 - Target Community Classification",
+      "source_url": "https://ssp.postmatric.karnataka.gov.in/",
+      "remediation": "Provide State Caste / Category Certificate or digital RD-numbered certificate."
+    },
+    {
+      "rule_id": "SSP_UG_04",
+      "label": "Aadhaar consent and NPCI active bank account mapping",
+      "plain_description": "Student's Aadhaar must be linked to bank account and active on NPCI DBT mapper.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "SSP Operational Guidelines Section 5 - Direct Bank Disbursal via Aadhaar",
+      "source_url": "https://ssp.postmatric.karnataka.gov.in/",
+      "remediation": "Verify that student Aadhaar is linked to bank account on NPCI portal."
+    }
+  ],
+  "application": {
+    "portal_name": "State Scholarship Portal (SSP)",
+    "portal_url": "https://ssp.postmatric.karnataka.gov.in/",
+    "office_name": "District Social Welfare / Taluk Backward Classes Welfare Office",
+    "documents_to_carry": [
+      "College Admission / Fee Receipt with Student Registration Number (USN / Reg No)",
+      "Caste & Income Certificate (RD Number)",
+      "10th (SSLC) and 12th (PUC) Mark sheets",
+      "Aadhaar Card and Seeded Bank Passbook",
+      "Hostel Stay Certificate (for Vidyasiri / Food stipend if applicable)"
+    ],
+    "process_steps": [
+      "Create student account on State Scholarship Portal (SSP) using Aadhaar and e-Attestation",
+      "Get academic documents e-attested by designated college e-Attestation Officer",
+      "Submit Post-Matric UG Scholarship application selecting your college and university registration number",
+      "College verifies fee structure and attendance online",
+      "Welfare Department sanctions tuition fee waiver and maintenance stipend directly via DBT"
+    ]
+  },
+  "category": "State & Need-Based",
+  "education_level": "Under-Graduate / Diploma",
+  "deadline": "2026-11-30",
+  "award_amount": "100% Tuition Fee Waiver + ₹15,000 / year",
+  "is_featured": false,
+  "application_status": "Open"
+}

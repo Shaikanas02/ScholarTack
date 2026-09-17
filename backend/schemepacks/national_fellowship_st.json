@@ -1,0 +1,101 @@
+{
+  "scheme_id": "national_fellowship_st",
+  "scheme_name": "National Fellowship and Scholarship for Higher Education of ST Students",
+  "authority": "Ministry of Tribal Affairs, Government of India",
+  "jurisdiction": "Central Sector Scheme (National Scholarship Portal)",
+  "benefit": "Full tuition fee + living expenses ₹2,200/month + books and stationery ₹3,000/year + computer assistance ₹45,000",
+  "version": "2024.1",
+  "source_url": "https://tribal.nic.in/",
+  "last_verified": "2026-08-20",
+  "review_window_days": 180,
+  "required_documents": [
+    "caste_certificate_st",
+    "income_certificate",
+    "bonafide_certificate",
+    "fee_receipt",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "NFST_01",
+      "label": "Beneficiary Category (Scheduled Tribe)",
+      "plain_description": "Candidate must belong to Scheduled Tribe (ST) community.",
+      "required_fact": "social_category",
+      "predicate": {
+        "operator": "in",
+        "value": ["ST", "Scheduled Tribe"]
+      },
+      "accepted_proof": ["caste_certificate_st"],
+      "source_clause": "Ministry of Tribal Affairs Guidelines Clause 4.1",
+      "source_url": "https://tribal.nic.in/",
+      "remediation": "Upload valid ST caste certificate issued by competent authority."
+    },
+    {
+      "rule_id": "NFST_02",
+      "label": "Admitted to degree course in approved technical institution",
+      "plain_description": "Student must be enrolled in full-time graduate degree program in an approved technical/higher education institution.",
+      "required_fact": "is_ug_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["bonafide_certificate", "admission_receipt"],
+      "source_clause": "Ministry of Tribal Affairs Guidelines Clause 4.2",
+      "source_url": "https://tribal.nic.in/",
+      "remediation": "Upload bonafide certificate from college."
+    },
+    {
+      "rule_id": "NFST_03",
+      "label": "Annual family income ceiling (<= ₹6,00,000 per annum)",
+      "plain_description": "Total family annual income must not exceed ₹6.00 Lakh.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 600000.0
+      },
+      "accepted_proof": ["income_certificate"],
+      "source_clause": "Ministry of Tribal Affairs Guidelines Clause 4.3",
+      "source_url": "https://tribal.nic.in/",
+      "remediation": "Upload valid income certificate."
+    },
+    {
+      "rule_id": "NFST_04",
+      "label": "Aadhaar verified and bank account ready",
+      "plain_description": "Aadhaar must be linked to active bank account for DBT grant.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["aadhaar_card"],
+      "source_clause": "Guidelines Clause 5 - DBT Payment Modality",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP)",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "Ministry of Tribal Affairs / College Tribal Welfare Cell",
+    "documents_to_carry": [
+      "ST Caste Certificate",
+      "Income Certificate (<= ₹6.00 Lakh)",
+      "College Admission Letter & Fee Receipts",
+      "Class 10th and 12th Marksheets",
+      "Aadhaar Card and Bank Passbook"
+    ],
+    "process_steps": [
+      "Register via One-Time Registration (OTR) on the National Scholarship Portal",
+      "Apply under Ministry of Tribal Affairs: National Fellowship and Scholarship for Higher Education of ST Students",
+      "Upload verified caste and income certificate",
+      "Institute verification via College Nodal Officer",
+      "Direct DBT grant transfer into Aadhaar-seeded bank account"
+    ]
+  },
+  "category": "ST / Scheduled Tribe",
+  "education_level": "Under-Graduate / Post-Graduate",
+  "deadline": "2026-10-31",
+  "award_amount": "Full Tuition + ₹29,400 Allowance",
+  "is_featured": true,
+  "application_status": "Open"
+}

@@ -1,0 +1,75 @@
+{
+  "scheme_id": "ayushman_bharat",
+  "scheme_name": "Ayushman Bharat PM-JAY (National Health Protection)",
+  "authority": "National Health Authority (NHA), Ministry of Health & Family Welfare, Govt of India",
+  "jurisdiction": "Central / State",
+  "benefit": "Cashless health insurance coverage up to ₹5,00,000 per family per year for secondary and tertiary care hospitalization",
+  "version": "2024.1",
+  "source_url": "https://pmjay.gov.in/",
+  "last_verified": "2026-08-15",
+  "review_window_days": 180,
+  "required_documents": [
+    "ration_card",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "JAY_01",
+      "label": "Deprivation / Vulnerable household category or BPL / Antyodaya status",
+      "plain_description": "Family must belong to SECC deprivation criteria or hold a valid BPL/Antyodaya/NFSA Priority Household ration card.",
+      "required_fact": "has_bpl_or_secc_eligibility",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["ration_card", "bpl_card", "secc_letter"],
+      "source_clause": "PM-JAY Scheme Guidelines Section 3.2 (Beneficiary Identification)",
+      "source_url": "https://pmjay.gov.in/about/pmjay",
+      "remediation": "Upload a Ration Card (BPL, PHH, or Antyodaya Anna Yojana) or SECC inclusion slip."
+    },
+    {
+      "rule_id": "JAY_02",
+      "label": "Annual family income threshold check",
+      "plain_description": "Annual household income must be within vulnerable category threshold (under ₹2,50,000).",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 250000
+      },
+      "accepted_proof": ["income_certificate", "ration_card", "self_declaration"],
+      "source_clause": "PM-JAY Operational Guidelines Table 1",
+      "source_url": "https://pmjay.gov.in/",
+      "remediation": "Provide valid Income Certificate showing annual family income under ₹2.5 Lakh."
+    },
+    {
+      "rule_id": "JAY_03",
+      "label": "Individual identity verification via Aadhaar",
+      "plain_description": "Every covered household member must be authenticated via individual Aadhaar.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["aadhaar_card"],
+      "source_clause": "PM-JAY Beneficiary Identification System (BIS) v2.0",
+      "source_url": "https://pmjay.gov.in/",
+      "remediation": "Upload Aadhaar card for KYC verification."
+    }
+  ],
+  "application": {
+    "portal_name": "Ayushman Bharat PMJAY Setu Portal",
+    "portal_url": "https://setu.pmjay.gov.in/",
+    "office_name": "Empaneled Hospital (Ayushman Mitra Helpdesk) or Nearest CSC",
+    "documents_to_carry": [
+      "Original Ration Card with all family members' names",
+      "Original Aadhaar Cards of all claiming family members",
+      "Active Mobile Phone for OTP verification"
+    ],
+    "process_steps": [
+      "Visit any empaneled public or private hospital or CSC centre",
+      "Approach the 'Ayushman Mitra' kiosk with your Ration Card and Aadhaar",
+      "Complete instant e-KYC biometric or OTP verification",
+      "Ayushman Golden Card will be generated and printed on the spot"
+    ]
+  }
+}

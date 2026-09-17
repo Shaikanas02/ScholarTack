@@ -1,0 +1,100 @@
+{
+  "scheme_id": "post_matric_disabilities",
+  "scheme_name": "Post-Matric Scholarship for Students with Disabilities",
+  "authority": "Department of Empowerment of Persons with Disabilities (DEPwD), Govt of India",
+  "jurisdiction": "Centrally Sponsored Scheme (National Scholarship Portal)",
+  "benefit": "Maintenance allowance up to ₹1,600/month + compulsory course fees + book allowance + disability allowance",
+  "version": "2024.1",
+  "source_url": "https://scholarships.gov.in/",
+  "last_verified": "2026-08-25",
+  "review_window_days": 180,
+  "required_documents": [
+    "disability_certificate_pwd",
+    "income_certificate",
+    "bonafide_certificate",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "PMPWD_01",
+      "label": "Beneficiary Category (Persons with Benchmark Disabilities 40%+)",
+      "plain_description": "Candidate must have certified benchmark disability of not less than 40%.",
+      "required_fact": "disability_status",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["disability_certificate_pwd", "udid_card"],
+      "source_clause": "DEPwD Post-Matric Guidelines Clause 3.1",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload valid PwD certificate."
+    },
+    {
+      "rule_id": "PMPWD_02",
+      "label": "Pursuing Post-Matric / Higher Education course",
+      "plain_description": "Candidate must be enrolled in post-matric studies (Class 11 to Post-Graduation / Technical Degree).",
+      "required_fact": "is_post_matric_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["bonafide_certificate", "admission_receipt"],
+      "source_clause": "DEPwD Post-Matric Guidelines Clause 3.2",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload bonafide certificate."
+    },
+    {
+      "rule_id": "PMPWD_03",
+      "label": "Annual family income ceiling (<= ₹2,50,000 per annum)",
+      "plain_description": "Family annual income from all sources must not exceed ₹2.50 Lakh.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 250000.0
+      },
+      "accepted_proof": ["income_certificate"],
+      "source_clause": "DEPwD Post-Matric Guidelines Clause 3.3",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload valid income certificate."
+    },
+    {
+      "rule_id": "PMPWD_04",
+      "label": "Aadhaar verified and bank account ready",
+      "plain_description": "Aadhaar must be linked for DBT payment.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["aadhaar_card"],
+      "source_clause": "Guidelines Clause 4 - DBT Payment Modality",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP)",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "State Department of Social Welfare / DEPwD",
+    "documents_to_carry": [
+      "Disability Certificate (40%+)",
+      "Income Certificate (<= ₹2.50 Lakh)",
+      "College Bonafide Certificate",
+      "Marksheet of Last Qualifying Exam",
+      "Aadhaar Card and Bank Passbook"
+    ],
+    "process_steps": [
+      "Register on National Scholarship Portal",
+      "Choose Post-Matric Scholarship for Students with Disabilities",
+      "Upload verified documents and marks card",
+      "College level e-verification",
+      "State level verification and direct DBT disbursement"
+    ]
+  },
+  "category": "Differently-Abled (PwD)",
+  "education_level": "Post-Matric / Higher Education",
+  "deadline": "2026-10-31",
+  "award_amount": "₹30,000 / year",
+  "is_featured": false,
+  "application_status": "Open"
+}

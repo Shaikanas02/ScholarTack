@@ -1,0 +1,101 @@
+{
+  "scheme_id": "top_class_pwd",
+  "scheme_name": "Scholarship for Top Class Education for Students with Disabilities",
+  "authority": "Department of Empowerment of Persons with Disabilities (DEPwD), Ministry of Social Justice & Empowerment, Govt of India",
+  "jurisdiction": "Central Sector Scheme (National Scholarship Portal)",
+  "benefit": "Tuition fee up to ₹2.00 lakh/year + maintenance allowance ₹3,000/month + book grant ₹5,000/year + disability allowance",
+  "version": "2024.1",
+  "source_url": "https://disabilityaffairs.gov.in/",
+  "last_verified": "2026-08-25",
+  "review_window_days": 180,
+  "required_documents": [
+    "disability_certificate_pwd",
+    "income_certificate",
+    "bonafide_certificate",
+    "fee_receipt",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "TCPWD_01",
+      "label": "Beneficiary Category (Persons with Benchmark Disabilities 40%+)",
+      "plain_description": "Applicant must have a valid Unique Disability ID (UDID) or medical board disability certificate of 40% or more.",
+      "required_fact": "disability_status",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["disability_certificate_pwd", "udid_card"],
+      "source_clause": "DEPwD Top Class Guidelines Clause 4.1 - Eligibility Criteria",
+      "source_url": "https://disabilityaffairs.gov.in/",
+      "remediation": "Upload valid UDID card or 40%+ disability certificate issued by government medical board."
+    },
+    {
+      "rule_id": "TCPWD_02",
+      "label": "Admitted to recognized full-time graduate / technical course",
+      "plain_description": "Candidate must be pursuing full-time graduate degree program in an approved institution.",
+      "required_fact": "is_ug_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["bonafide_certificate", "admission_receipt"],
+      "source_clause": "DEPwD Top Class Guidelines Clause 4.2 - Institutions Covered",
+      "source_url": "https://disabilityaffairs.gov.in/",
+      "remediation": "Upload bonafide certificate from the college."
+    },
+    {
+      "rule_id": "TCPWD_03",
+      "label": "Annual family income ceiling (<= ₹6,00,000 per annum)",
+      "plain_description": "Total family annual income must not exceed ₹6.00 Lakh.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 600000.0
+      },
+      "accepted_proof": ["income_certificate"],
+      "source_clause": "DEPwD Top Class Guidelines Clause 4.3 - Income Ceiling",
+      "source_url": "https://disabilityaffairs.gov.in/",
+      "remediation": "Upload valid income certificate."
+    },
+    {
+      "rule_id": "TCPWD_04",
+      "label": "Aadhaar verified and bank account ready",
+      "plain_description": "Aadhaar must be linked for DBT payment directly to student.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["aadhaar_card"],
+      "source_clause": "Guidelines Clause 5 - DBT Payment Modality",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP)",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "Department of Empowerment of Persons with Disabilities / College Disability Cell",
+    "documents_to_carry": [
+      "Disability Certificate / UDID Card (40%+ disability)",
+      "Income Certificate (<= ₹6.00 Lakh)",
+      "College Admission Letter & Fee Receipts",
+      "Qualifying Exam Marksheet",
+      "Aadhaar Card and Bank Account Proof"
+    ],
+    "process_steps": [
+      "Register via One-Time Registration (OTR) on the National Scholarship Portal",
+      "Select scheme under DEPwD: Top Class Education for Students with Disabilities",
+      "Upload disability certificate, college fee breakdown, and income certificate",
+      "Verification by College Head of Institution",
+      "Direct DBT grant disbursed to bank account"
+    ]
+  },
+  "category": "Differently-Abled (PwD)",
+  "education_level": "Under-Graduate / Post-Graduate",
+  "deadline": "2026-10-31",
+  "award_amount": "₹2,00,000 / year + ₹41,000 Allowance",
+  "is_featured": true,
+  "application_status": "Open"
+}

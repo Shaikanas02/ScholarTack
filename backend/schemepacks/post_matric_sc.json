@@ -1,0 +1,99 @@
+{
+  "scheme_id": "post_matric_sc",
+  "scheme_name": "Post-Matric Scholarship for SC Students",
+  "authority": "Ministry of Social Justice and Empowerment, Govt of India & State Welfare Depts",
+  "jurisdiction": "Centrally Sponsored Scheme (CSS)",
+  "benefit": "100% compulsory non-refundable fees reimbursement + academic maintenance allowance up to ₹13,500/yr",
+  "version": "2024.1",
+  "source_url": "https://scholarships.gov.in/",
+  "last_verified": "2026-08-15",
+  "review_window_days": 180,
+  "required_documents": [
+    "caste_certificate",
+    "income_certificate",
+    "marksheet_or_admission_receipt",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "PMS_01",
+      "label": "Scheduled Caste (SC) community membership",
+      "plain_description": "Candidate must belong to a recognized Scheduled Caste community verified by competent state revenue authority.",
+      "required_fact": "social_category",
+      "predicate": {
+        "operator": "in",
+        "value": ["SC", "Scheduled Caste"]
+      },
+      "accepted_proof": ["caste_certificate", "community_certificate"],
+      "source_clause": "Revised Guidelines for Post-Matric Scholarship to SC Students Clause III(i)",
+      "source_url": "https://socialjustice.gov.in/schemes/31",
+      "remediation": "Upload a verified digital Caste Certificate issued by Tehsildar/SDM."
+    },
+    {
+      "rule_id": "PMS_02",
+      "label": "Annual family income threshold ceiling (<= ₹2,50,000 per annum)",
+      "plain_description": "Total family income from all sources must not exceed ₹2,50,000 per year.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 250000
+      },
+      "accepted_proof": ["income_certificate", "tehsildar_income_slip"],
+      "source_clause": "Revised Guidelines for Post-Matric Scholarship to SC Students Clause III(ii)",
+      "source_url": "https://socialjustice.gov.in/schemes/31",
+      "remediation": "Provide current valid Income Certificate proving household income is under ₹2.5 Lakh/yr."
+    },
+    {
+      "rule_id": "PMS_03",
+      "label": "Enrollment in recognized post-matriculation educational course",
+      "plain_description": "Student must be pursuing recognized post-secondary / higher secondary studies (Class 11, 12, Diploma, UG, or PG).",
+      "required_fact": "is_post_matric_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["marksheet_or_admission_receipt", "bonafide_certificate", "student_id"],
+      "source_clause": "Revised Guidelines for Post-Matric Scholarship to SC Students Clause IV",
+      "source_url": "https://socialjustice.gov.in/schemes/31",
+      "remediation": "Upload latest marksheet, fee receipt, or college Bonafide Certificate."
+    },
+    {
+      "rule_id": "PMS_04",
+      "label": "Aadhaar seeded bank account for direct benefit transfer",
+      "plain_description": "The student must have an Aadhaar-linked savings bank account for direct scholarship disbursal.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["aadhaar_card"],
+      "source_clause": "Guidelines Clause VI (DBT Disbursement Modality)",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card linked with student's bank account."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP) / State Portal",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "District Welfare Officer (Social Welfare) or College Nodal Officer",
+    "documents_to_carry": [
+      "Original Caste Certificate",
+      "Original Income Certificate (issued within last 1 year)",
+      "Mark sheets of qualifying examination (10th/12th/Semester)",
+      "Fee receipt / College Bonafide Certificate",
+      "Student Bank Passbook and Aadhaar Card"
+    ],
+    "process_steps": [
+      "Register on National Scholarship Portal (NSP) with One-Time Registration (OTR)",
+      "Upload digital certificates and select institution and course",
+      "Institution Nodal Officer (INO) verifies application online within 15 days",
+      "District Nodal Officer (DNO) verifies and sanctions scholarship directly to student's bank account via DBT"
+    ]
+  },
+  "category": "Social Category (SC)",
+  "education_level": "Post-Matric (Class 11, 12, UG, PG)",
+  "deadline": "2026-10-31",
+  "award_amount": "Full Compulsory Fees + ₹13,500 / year",
+  "is_featured": true,
+  "application_status": "Open"
+}

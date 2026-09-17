@@ -1,0 +1,92 @@
+{
+  "scheme_id": "pmay_gramin",
+  "scheme_name": "PMAY-G (Pradhan Mantri Awaas Yojana - Gramin)",
+  "authority": "Ministry of Rural Development, Govt of India & Department of Rural Development",
+  "jurisdiction": "Centrally Sponsored Scheme (60:40 Central:State)",
+  "benefit": "Direct financial assistance of ₹1,20,000 (Plains) / ₹1,30,000 (Hilly/NE/IAP) for pucca house construction + 90 days MGNREGA wages + ₹12,000 for toilet",
+  "version": "2024.1",
+  "source_url": "https://pmayg.nic.in/",
+  "last_verified": "2026-08-15",
+  "review_window_days": 180,
+  "required_documents": [
+    "aadhaar_card",
+    "ration_card",
+    "bank_passbook",
+    "land_ownership_record"
+  ],
+  "criteria": [
+    {
+      "rule_id": "PMAY_01",
+      "label": "Deprivation & houseless / kutcha house dwelling status",
+      "plain_description": "Beneficiary must be living in a kutcha house (kutcha wall and kutcha roof) or be houseless according to SECC 2011 list.",
+      "required_fact": "has_bpl_or_secc_eligibility",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["ration_card", "bpl_card", "secc_letter"],
+      "source_clause": "PMAY-G Framework for Implementation Section 2.1 (Identification of Beneficiary)",
+      "source_url": "https://pmayg.nic.in/netiacc/Guidelines/Guidelines_English.pdf",
+      "remediation": "Upload Ration Card (BPL/PHH) or Gram Panchayat SECC inclusion certification."
+    },
+    {
+      "rule_id": "PMAY_02",
+      "label": "Annual household income ceiling for rural housing assistance",
+      "plain_description": "Annual household income must not exceed ₹1,80,000 from all sources.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 180000
+      },
+      "accepted_proof": ["income_certificate", "ration_card", "self_declaration"],
+      "source_clause": "PMAY-G Implementation Guidelines Section 3.4",
+      "source_url": "https://pmayg.nic.in/netiacc/Guidelines/Guidelines_English.pdf",
+      "remediation": "Provide an Income Certificate verifying household income under ₹1.8 Lakh/year."
+    },
+    {
+      "rule_id": "PMAY_03",
+      "label": "Land ownership / house site possession",
+      "plain_description": "Beneficiary must own land or have unencumbered allotment of land for house construction.",
+      "required_fact": "land_holding_acres",
+      "predicate": {
+        "operator": "gte",
+        "value": 0
+      },
+      "accepted_proof": ["land_ownership_record", "patta", "gram_panchayat_certificate"],
+      "source_clause": "PMAY-G Operational Guidelines Clause 4.2 (Landless & Homestead Assistance)",
+      "source_url": "https://pmayg.nic.in/",
+      "remediation": "Upload Patta, Land Record, or Gram Panchayat House Site Certificate."
+    },
+    {
+      "rule_id": "PMAY_04",
+      "label": "Aadhaar authentication and seeded DBT bank account",
+      "plain_description": "Aadhaar seeded bank account is mandatory for 3 staggered installment disbursements.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["aadhaar_card"],
+      "source_clause": "PMAY-G Direct Benefit Transfer (DBT) Protocol Section 5",
+      "source_url": "https://pmayg.nic.in/",
+      "remediation": "Upload applicant's Aadhaar card."
+    }
+  ],
+  "application": {
+    "portal_name": "AwaasSoft - PMAYG Portal",
+    "portal_url": "https://awaassoft.nic.in/",
+    "office_name": "Gram Panchayat Office or Block Development Office (BDO)",
+    "documents_to_carry": [
+      "Original Aadhaar Card and photo",
+      "Land Ownership Record / Homestead Patta",
+      "Bank Account Passbook showing Aadhaar NPCI seeding",
+      "BPL Ration Card / Job Card under MGNREGA"
+    ],
+    "process_steps": [
+      "Registration done by Gram Rozgar Sahayak (GRS) on AwaasApp with geo-tagged photo of existing kutcha house",
+      "Gram Sabha approves priority list of beneficiaries",
+      "Sanction order issued by Block Development Officer",
+      "First installment of ₹40,000 credited to bank account for foundation level work"
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "scheme_id": "top_class_sc",
+  "scheme_name": "Central Sector Scholarship of Top Class Education for SC Students",
+  "authority": "Ministry of Social Justice and Empowerment, Government of India",
+  "jurisdiction": "Central Sector Scheme (National Scholarship Portal)",
+  "benefit": "Full tuition fee + living allowance ₹3,000/month + books and stationery ₹5,000/year + computer assistance ₹45,000 one-time",
+  "version": "2024.1",
+  "source_url": "https://socialjustice.gov.in/schemes/33",
+  "last_verified": "2026-08-20",
+  "review_window_days": 180,
+  "required_documents": [
+    "caste_certificate_sc",
+    "income_certificate",
+    "bonafide_certificate",
+    "fee_receipt",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "TCSC_01",
+      "label": "Beneficiary Category (Scheduled Caste)",
+      "plain_description": "Student must belong to the Scheduled Caste (SC) community.",
+      "required_fact": "social_category",
+      "predicate": {
+        "operator": "in",
+        "value": ["SC", "Scheduled Caste"]
+      },
+      "accepted_proof": ["caste_certificate_sc"],
+      "source_clause": "Top Class SC Scheme Guidelines Clause 3.1",
+      "source_url": "https://socialjustice.gov.in/schemes/33",
+      "remediation": "Upload valid SC caste certificate issued by competent state authority."
+    },
+    {
+      "rule_id": "TCSC_02",
+      "label": "Full-time enrollment in notified degree institution",
+      "plain_description": "Candidate must have secured admission in a recognized degree program in an approved technical/professional college.",
+      "required_fact": "is_ug_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["bonafide_certificate", "admission_receipt"],
+      "source_clause": "Top Class SC Scheme Guidelines Clause 3.2",
+      "source_url": "https://socialjustice.gov.in/schemes/33",
+      "remediation": "Upload college bonafide certificate."
+    },
+    {
+      "rule_id": "TCSC_03",
+      "label": "Annual family income ceiling (<= ₹8,00,000 per annum)",
+      "plain_description": "Total family annual income from all sources must not exceed ₹8.00 Lakh.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 800000.0
+      },
+      "accepted_proof": ["income_certificate"],
+      "source_clause": "Top Class SC Scheme Guidelines Clause 3.3",
+      "source_url": "https://socialjustice.gov.in/schemes/33",
+      "remediation": "Upload valid family income certificate."
+    },
+    {
+      "rule_id": "TCSC_04",
+      "label": "Aadhaar verified and bank account ready",
+      "plain_description": "Aadhaar must be linked to active bank account for DBT disbursals.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": ["aadhaar_card"],
+      "source_clause": "Guidelines Clause 4 - DBT Payment Modality",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload verified Aadhaar card."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP)",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "Ministry of Social Justice and Empowerment / College Nodal Desk",
+    "documents_to_carry": [
+      "SC Caste Certificate",
+      "Income Certificate (<= ₹8 Lakh)",
+      "College Admission Letter & Fee Receipts",
+      "Class 10th and 12th Marksheets",
+      "Aadhaar Card and Bank Passbook"
+    ],
+    "process_steps": [
+      "Register via One-Time Registration (OTR) on the National Scholarship Portal",
+      "Apply under Department of Social Justice & Empowerment: Top Class Education for SC Students",
+      "Upload verified documents and fee break-up structure",
+      "Obtain institutional verification via College Nodal Officer",
+      "Grant credited directly into Aadhaar-seeded bank account"
+    ]
+  },
+  "category": "SC / Scheduled Caste",
+  "education_level": "Under-Graduate / Post-Graduate",
+  "deadline": "2026-10-31",
+  "award_amount": "Full Tuition + ₹86,000 Allowance",
+  "is_featured": true,
+  "application_status": "Open"
+}

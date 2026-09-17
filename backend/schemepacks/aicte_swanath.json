@@ -1,0 +1,119 @@
+{
+  "scheme_id": "aicte_swanath",
+  "scheme_name": "AICTE Swanath Scholarship Scheme (Degree Level)",
+  "authority": "All India Council for Technical Education (AICTE), Ministry of Education, Govt of India",
+  "jurisdiction": "Central Government / AICTE Scheme (Disbursed via National Scholarship Portal)",
+  "benefit": "₹50,000 per annum lump-sum scholarship towards college fees and living costs",
+  "version": "2024.1",
+  "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Swanath",
+  "last_verified": "2026-08-20",
+  "review_window_days": 180,
+  "required_documents": [
+    "swanath_eligibility_certificate",
+    "marksheet_or_admission_receipt",
+    "income_certificate",
+    "aadhaar_card"
+  ],
+  "criteria": [
+    {
+      "rule_id": "SWANATH_01",
+      "label": "Beneficiary Category (Orphan / Wards of Armed Forces / Parents Deceased due to COVID-19)",
+      "plain_description": "Candidate must be an orphan, or a ward of Armed Forces/Central Paramilitary Forces personnel martyred in action, or whose parents died due to COVID-19.",
+      "required_fact": "is_orphan_or_ward_of_defense",
+      "predicate": {
+        "operator": "in",
+        "value": [
+          true,
+          "true",
+          "yes",
+          "Yes",
+          "orphan",
+          "defense_ward",
+          "covid_orphan"
+        ]
+      },
+      "accepted_proof": [
+        "swanath_eligibility_certificate",
+        "death_certificate",
+        "defense_personnel_certificate"
+      ],
+      "source_clause": "AICTE Swanath Guidelines Clause 2.1 - Eligibility Categories",
+      "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Swanath",
+      "remediation": "Upload valid certificate from competent authority proving orphan status, COVID bereavement, or defense martyr ward status."
+    },
+    {
+      "rule_id": "SWANATH_02",
+      "label": "Enrolled in 1st year of AICTE approved UG Technical Degree program",
+      "plain_description": "Student must be admitted to 1st year degree course in an AICTE-approved technical institution.",
+      "required_fact": "is_ug_student",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "bonafide_certificate",
+        "admission_receipt"
+      ],
+      "source_clause": "AICTE Swanath Guidelines Clause 2.2 - Institutional Admission",
+      "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Swanath",
+      "remediation": "Upload AICTE approved college admission letter."
+    },
+    {
+      "rule_id": "SWANATH_03",
+      "label": "Annual family income threshold (<= ₹8,00,000 per annum)",
+      "plain_description": "Total family annual income must not exceed ₹8 Lakh per year.",
+      "required_fact": "annual_family_income",
+      "predicate": {
+        "operator": "lte",
+        "value": 800000.0
+      },
+      "accepted_proof": [
+        "income_certificate"
+      ],
+      "source_clause": "AICTE Swanath Guidelines Clause 2.3 - Income Ceiling",
+      "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Swanath",
+      "remediation": "Upload valid Income Certificate."
+    },
+    {
+      "rule_id": "SWANATH_04",
+      "label": "Aadhaar verified and bank account ready",
+      "plain_description": "Student must have Aadhaar linked with their bank account.",
+      "required_fact": "aadhaar_present",
+      "predicate": {
+        "operator": "eq",
+        "value": true
+      },
+      "accepted_proof": [
+        "aadhaar_card"
+      ],
+      "source_clause": "Guidelines Clause 4 - DBT Payment Modality",
+      "source_url": "https://scholarships.gov.in/",
+      "remediation": "Upload Aadhaar card."
+    }
+  ],
+  "application": {
+    "portal_name": "National Scholarship Portal (NSP) - AICTE Section",
+    "portal_url": "https://scholarships.gov.in/",
+    "office_name": "AICTE Student Development Cell / College Student Welfare Cell",
+    "documents_to_carry": [
+      "Orphan certificate / Parents death certificate / Armed Forces certificate",
+      "Admission letter for AICTE approved degree course",
+      "Income Certificate (<= ₹8 Lakh)",
+      "Aadhaar Card and NPCI-seeded Bank Account Passbook",
+      "Class 10th and 12th Marksheets"
+    ],
+    "process_steps": [
+      "Register via One-Time Registration (OTR) on the National Scholarship Portal",
+      "Select scheme: AICTE - SWANATH SCHOLARSHIP SCHEME (DEGREE)",
+      "Upload eligibility category proof and institutional fee details",
+      "College verification through NSP Head of Institution (HOI) login",
+      "Direct DBT grant of ₹50,000/yr disbursed directly into student's bank account"
+    ]
+  },
+  "category": "Need & Defense Wards",
+  "education_level": "Under-Graduate (Technical)",
+  "deadline": "2026-10-31",
+  "award_amount": "₹50,000 / year",
+  "is_featured": false,
+  "application_status": "Open"
+}
